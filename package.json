@@ -1,0 +1,45 @@
+{
+  "name": "contract-project-wolves2020-online-magic",
+  "version": "1.0.0",
+  "description": "## Звонок от заказчика",
+  "main": "app.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "build:css": "tailwind build src/style.css -o public/style.css",
+    "start": "node app.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofialapteva/contract-project-wolves2020-online-magic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofialapteva/contract-project-wolves2020-online-magic/issues"
+  },
+  "homepage": "https://github.com/sofialapteva/contract-project-wolves2020-online-magic#readme",
+  "dependencies": {
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.8",
+    "nodemailer": "^6.4.17",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  }
+}

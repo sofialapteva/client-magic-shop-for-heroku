@@ -1,0 +1,9 @@
+<form action="/users/edit/{{user.id}}" method="POST"
+  class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">
+  <input type="text" name="firstName" value="{{user.firstName}}">
+  <input type="text" name="lastName" value="{{user.lastName}}"><br><br>
+  <input type="text" name="email" value="{{user.email}}"><br><br>
+  {{!-- <input type="password" name="password1" placeholder="Пароль"><br> --}}
+  {{!-- <input type="password" name="password2" placeholder="Подтвердите пароль"><br><br> --}}
+  <button name="buttonEdit" type="submit" style="color: green">Записать изменения</button>
+</form>

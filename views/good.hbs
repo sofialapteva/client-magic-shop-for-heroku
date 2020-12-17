@@ -1,0 +1,22 @@
+<div class="h-screen mx-auto my-40 w-10/12 text-yellow-500 font-sans text-lg p-4 rounded-lg leading-loose">
+  <h2 class="text-2xl text-center">Добавить товар</h2>
+
+  <form action="/user/goods" method="POST">
+    <label class="pl-2">Название товара</label>
+    <input type="text" name="name" placeholder="Введите название товара" class="block w-full m-1 rounded-lg p-1">
+    <label class="pl-2">Изображение</label>
+    <input type="text" name="img" placeholder="Вставьте ссылку на изображение" class="block w-full m-1 rounded-lg p-1">
+    <label class="pl-2">Стоимость товара</label>
+    <input type="text" name="price" placeholder="Введите стоимость товара" class="block w-full m-1 rounded-lg p-1">
+    <label class="pl-2">Насколько товар изношен:</label>
+    <select name="worn" class="block w-full m-1 rounded-lg p-1 text-black bg-white">
+      <option value="0">Новый товар</option>
+      <option value="30">Немного изношен</option>
+      <option value="70">Сильно изношен</option>
+      <option value="100">Сломан</option>
+    </select>
+    <button name="buttonSignIn" type="submit"
+      class="inline-block w-full px-6 py-2 mx-1 rounded-lg text-xl text-red-700 font-bold font-medium leading-6 text-center text-white my-4 transition bg-yellow-500 shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none">Добавить</button>
+</div>
+</form>
+</div>

@@ -1,0 +1,28 @@
+<div class="my-32 mx-auto w-7/12 text-black uppercase text-lg p-4 rounded-lg text-yellow-400 leading-loose">
+  <form action="/user/register" method="POST">
+    {{#if error}}
+      <p class="text-sm pl-2">{{error}}</p>
+    {{/if}}
+    <label class="pl-2">Ваше имя</label>
+    <input type="text" name="firstName" placeholder="Имя" class="block w-full m-1 rounded-lg p-1 mb-4">
+    <label class="pl-2">Фамилия</label>
+    <input type="text" name="lastName" placeholder="Фамилия" class="block w-full m-1 rounded-lg p-1 mb-4">
+    <label class="pl-2">Email</label>
+    <input type="text" name="email" placeholder="Email" class="block w-full m-1 rounded-lg p-1 mb-4">
+    <label class="pl-2">Город</label>
+    <select name="city" class="block w-full text-black m-1 rounded-lg p-1 bg-white mb-4">
+      {{#each city}}
+        <option value={{this._id}}>{{this.city}}</option>
+      {{/each}}
+    </select>
+    <label class="pl-2">Пароль</label>
+    <input type="password" name="password1" placeholder="Пароль" class="block w-full m-1 rounded-lg p-1 mb-4">
+    <input type="password" name="password2" placeholder="Подтвердите пароль"
+      class="block w-full m-1 rounded-lg p-1 mb-4">
+    {{#if repeatePassword}}
+      <p style="color: red; font-size: 10px; font-weight: bold">Пароли не совпадают</p>
+    {{/if}}
+    <button name="buttonSignIn" type="submit"
+      class="inline-block w-full px-6 py-2 mx-1 rounded-lg text-xl text-red-700 font-bold font-medium leading-6 text-center text-white  transition bg-yellow-500 shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none">Зарегистрироваться</button>
+  </form>
+</div>

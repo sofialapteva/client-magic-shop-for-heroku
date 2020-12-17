@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Magic from Wolves</title>
+</head>
+
+<body style="font-family: 'Yeseva One', cursive; background: url(/img/bg.jpg)" class="text-sm lg:text-xl">
+  <header>
+    <nav class='h-16 bg-black text-white text-lg md:text-2xl flex justify-around items-center'>
+      <a href='/'> <img src="/img/logo.png" alt=" Magic:
+      The Gathering Shop" class='h-9 md:h-14 w-fit'></a>
+      {{#if userId}}
+        <a href=" /user">Личный кабинет</a>
+        <a href="/user/cart" class="flex items-center"> <img src="/img/basket.svg" class="px-1"> Корзина</a>
+        <a href="/user/logout" class="text-gray-400">Выйти</a>
+      {{else}}
+        <a href="/user/register">Регистрация</a>
+        <a href="/user/login">Войти</a>
+      {{/if}}
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <div>
+      {{{body}}}
+    </div>
+  </div>
+</body>
+
+</html>

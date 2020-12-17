@@ -1,0 +1,29 @@
+<script defer src='/js/cartScript.js'></script>
+<div class="h-screen mx-auto my-2 w-10/12 text-yellow-500 font-sans text-lg p-4 rounded-lg leading-loose">
+  <h1 class="uppercase font-bold text-center text-2xl">Корзина</h1>
+  <p>Пользователь: {{user.firstName}} {{user.lastName}}</p>
+  {{#if goodsInCart}}
+    <p>Товары:</p>
+    <div class="grid md:grid-cols-3 text-black">
+      {{#each goodsInCart}}
+        <div
+          style='background-color:rgba(255, 255, 255, 0.4); margin: 10px; font-size: 17px; text-align:center; border-radius: 30px; padding:10px'>
+          <h3 class="text-xl py-2">{{this.name}}</h3>
+          <div class="imgContainer"><img src="{{this.img}}" alt="{{this.name}}"></div>
+          <p>Процент изношенности: {{this.worn}} %</p>
+          <p>Цена:{{this.price}} рублей</p>
+          <p>Статус товара: {{this.status}}</p>
+        </div>
+      {{/each}}
+    </div>
+    <p class="text-2xl py-3">Итого к оплате: {{sum}} рублей</p>
+    <button
+      class="inline-block px-3 py-1 rounded-lg  text-red-700 font-bold font-medium leading-6 text-center text-white  transition bg-yellow-500 shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none"
+      id='confirmOrder'>Подтвердить заказ</button>
+    <button
+      class="inline-block px-3 py-1 rounded-lg  text-red-700 font-bold font-medium leading-6 text-center text-white  transition bg-yellow-500 shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none"
+      id='clearCart'>Очистить корзину</button>
+  {{else}}
+    <p>Корзина пока пуста</p>
+  {{/if}}
+</div>

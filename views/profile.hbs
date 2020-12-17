@@ -1,0 +1,56 @@
+<script defer src="/js/profile.js"></script>
+<div class="h-screen mx-auto my-2 w-10/12 text-yellow-500 font-sans text-lg p-4 rounded-lg leading-loose">
+  <nav class="grid grid-cols-4 items-center">
+    <h2 class="profile md:text-2xl font-bold hover:underline" data-id='profile'>Личный кабинет</h2>
+    <h3 class="goods md:text-2xl font-bold hover:underline" data-id='goods'>Мои товары</h3>
+    <h3 class="orders md:text-2xl font-bold hover:underline" data-id='orders'>Мои заказы</h3>
+    <a href="/user/goods"> <button
+        class="inline-block px-3 py-1 text-lg text-red-700 font-bold font-medium leading-6 text-center text-white  transition bg-yellow-500 shadow ripple hover:shadow-lg hover:bg-yellow-600 focus:outline-none my-2">Добавить
+        товар</button> </a>
+  </nav>
+  <div class="profile divide-y">
+    <p>Пользователь: {{user.firstName}} {{user.lastName}}</p>
+    <p>Город: {{user.city.city}}</p>
+    <p>Email: {{user.email}}</p>
+  </div>
+
+  <div class="goods hidden">
+    {{#if userGoods}}
+      <div class="grid md:grid-cols-3 text-black">
+        {{#each userGoods}}
+          <div
+            style='background-color:rgba(255, 255, 255, 0.4); margin: 10px; font-size: 17px; text-align:center; border-radius: 30px; padding:10px'>
+            <h3 class="text-xl py-2">{{this.name}}</h3>
+            <div class="imgContainer"><img src="{{this.img}}" alt="{{this.name}}"></div>
+            <p>Процент изношенности: {{this.worn}} %</p>
+            <p>Цена:{{this.price}} рублей</p>
+            <p>Статус товара: {{this.status}}</p>
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p>Товаров пока нет</p>
+    {{/if}}
+  </div>
+
+  <div class="orders hidden">
+    {{#if userOrders}}
+      <div class="grid md:grid-cols-2 text-black">
+        {{#each userOrders}}
+          <div
+            style='background-color:rgba(255, 255, 255, 0.4); margin: 10px; font-size: 17px; text-align:center; border-radius: 30px; padding:10px'>
+            <p>Заказ ID{{this._id}}</p>
+            <p>Дата заказа: {{this.createdAt}}</p>
+            <p>Состав заказа:</p>
+            {{#each this.goods}}
+              <p>{{this.name}}</p>
+              <div class="imgContainer"><img src="{{this.img}}" alt="{{this.name}}"></div>
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+    {{else}}
+      <p>Заказов пока нет</p>
+    {{/if}}
+  </div>
+</div>
