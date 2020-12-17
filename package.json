@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sofialapteva/contract-project-wolves2020-online-magic.git"
+    "url": "git+https://github.com/sofialapteva/client-magic-shop-for-heroku.git"
   },
   "keywords": [],
   "author": "",
@@ -41,5 +41,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
